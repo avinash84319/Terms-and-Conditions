@@ -128,7 +128,32 @@ def classify(data):                                        #route for classifyin
 
     response = requests.post(API_URL, headers=headers, json=classdata)            #sending the json object to the api
 
-    return response.json()                          #returning the response
+    store=[]                                                         #storing the labels
+    for i in response.json():
+        for j in i:
+            if j['score']>0.5:
+                store.append(j['label'])
+
+    dsrd=[]                                               #storing the data according to the labels
+    dcu=[]
+    dsp=[]
+    dsd=[]
+    other=[]
+
+    for i in range(len(store)):                                   #segregating the data according to the labels
+        if store[i]=='data-storage-retention-deletion':
+            dsrd.append(data[i])
+        elif store[i]=='data-collection-usage':
+            dcu.append(data[i])
+        elif store[i]=='data-security-protection':
+            dsp.append(data[i])
+        elif store[i]=='data-sharing-disclosure':
+            dsd.append(data[i])
+        else:
+            other.append(data[i])
+
+    return {"data-storage-retention-deletion":dsrd,"data_collection_usage":dcu,"data-security-protection":dsp,"data-sharing-disclosure":dsd,"other":other}
+
 
 @app.route("/chatfor=<data>")
 def chat(data):                                       #route for chatbot
