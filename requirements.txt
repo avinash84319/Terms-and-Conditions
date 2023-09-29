@@ -5,7 +5,7 @@ requests==2.30.0
 sentence-transformers==2.2.2
 transformers==4.33.3
 
-WARNING(pigar): some manual fixes are required since pigar has found duplicate requirements for the same import name.
+# WARNING(pigar): some manual fixes are required since pigar has found duplicate requirements for the same import name.
 # WARNING(pigar): the following duplicate requirements are for import name: flask
 Dirtrav==1.0.0
 facevision==0.0.4
