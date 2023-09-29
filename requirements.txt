@@ -6,7 +6,6 @@ transformers==4.30.2
 
 # WARNING(pigar): some manual fixes are required since pigar has found duplicate requirements for the same import name.
 # WARNING(pigar): the following duplicate requirements are for import name: flask
-Dirtrav==1.0.0
 facevision==0.0.4
 FastFlask==1.2.32
 Flask==2.3.3
