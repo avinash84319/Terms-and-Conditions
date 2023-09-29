@@ -10,7 +10,7 @@ import requests
 summarizer = pipeline("summarization", model="knkarthick/MEETING_SUMMARY")
 from pdfminer.high_level import extract_text
 from sentence_transformers import SentenceTransformer, util,CrossEncoder
-from text_generation import Client
+# from text_generation import Client
 # Importing the required libraries.-------------------------------------------------------------------------------------------------------------------------------
 
 
